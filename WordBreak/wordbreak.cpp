@@ -117,41 +117,41 @@ private:
     bool m_adj[54][54];     // 表示字典中存在的字符相邻关系
 };
 
-//int main(int argc, const char* argv[])
-//{
-//    {
-//        std::string s = "leetcode";
-//        std::unordered_set<std::string> dict;
-//        dict.insert("leet");
-//        dict.insert("code");
-//
-//        bool flag = Solution().wordBreak(s, dict);
-//    }
-//
-//    {
-//        std::string s = "dabcmy";
-//        std::unordered_set<std::string> dict;
-//        dict.insert("d");
-//        dict.insert("ab");
-//        dict.insert("abc");
-//        dict.insert("my");
-//
-//        bool flag = Solution().wordBreak(s, dict);
-//    }
-//
-//    {
-//        std::string s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
-//        std::unordered_set<std::string> dict;
-//        const char* ws[] = {"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"};
-//        for(int i = 0; i < sizeof(ws) / sizeof(const char*); ++i)
-//        {
-//            dict.insert(ws[i]);
-//        }
-//
-//        bool flag = Solution().wordBreak(s, dict);
-//    }
-//
-//    return 0;
-//}
+int main(int argc, const char* argv[])
+{
+    {
+        std::string s = "leetcode";
+        std::unordered_set<std::string> dict;
+        dict.insert("leet");
+        dict.insert("code");
+
+        bool flag = Solution().wordBreak(s, dict);
+    }
+
+    {
+        std::string s = "dabcmy";
+        std::unordered_set<std::string> dict;
+        dict.insert("d");
+        dict.insert("ab");
+        dict.insert("abc");
+        dict.insert("my");
+
+        bool flag = Solution().wordBreak(s, dict);
+    }
+
+    {
+        std::string s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
+        std::unordered_set<std::string> dict;
+        const char* ws[] = {"a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"};
+        for(int i = 0; i < sizeof(ws) / sizeof(const char*); ++i)
+        {
+            dict.insert(ws[i]);
+        }
+
+        bool flag = Solution().wordBreak(s, dict);
+    }
+
+    return 0;
+}
 
 //--------------------------------------------------------------------------

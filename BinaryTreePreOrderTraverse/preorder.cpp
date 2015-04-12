@@ -13,13 +13,13 @@
 //-------------------------------------------------------------------------
 
 // Definition for binary tree
-//struct TreeNode 
-//{
-//    int val;
-//    TreeNode *left;
-//    TreeNode *right;
-//    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-//};
+struct TreeNode 
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
 class Solution 
 {
@@ -48,29 +48,29 @@ public:
         return res;
     }
 
-    //void preOrderCreate(TreeNode*& root)
-    //{
-    //    int val = 0;
-    //    ::scanf("%d", &val);
-    //    if(-1 == val)
-    //        root = NULL;
-    //    else
-    //    {
-    //        root = new TreeNode(val);
-    //        preOrderCreate(root->left);
-    //        preOrderCreate(root->right);
-    //    }
-    //}
+    void preOrderCreate(TreeNode*& root)
+    {
+        int val = 0;
+        ::scanf("%d", &val);
+        if(-1 == val)
+            root = NULL;
+        else
+        {
+            root = new TreeNode(val);
+            preOrderCreate(root->left);
+            preOrderCreate(root->right);
+        }
+    }
 };
 
-//int main(int argc, const char* argv[])
-//{
-//    TreeNode* root = NULL;
-//    Solution s;
-//    s.preOrderCreate(root);
-//    std::vector<int> res = s.preorderTraversal(root);
-//
-//    return 0;
-//}
+int main(int argc, const char* argv[])
+{
+    TreeNode* root = NULL;
+    Solution s;
+    s.preOrderCreate(root);
+    std::vector<int> res = s.preorderTraversal(root);
+
+    return 0;
+}
 
 //--------------------------------------------------------------------------

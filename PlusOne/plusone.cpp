@@ -41,17 +41,17 @@ public:
     }
 };
 
-//int main(int argc, const char* argv[])
-//{
-//    std::vector<int> digits;
-//    digits.push_back(1);
-//    digits.push_back(1);
-//    digits.push_back(9);
-//    digits.push_back(9);
-//
-//    std::vector<int> res = Solution().plusOne(digits);
-//
-//    return 0;
-//}
+int main(int argc, const char* argv[])
+{
+    std::vector<int> digits;
+    digits.push_back(1);
+    digits.push_back(1);
+    digits.push_back(9);
+    digits.push_back(9);
+
+    std::vector<int> res = Solution().plusOne(digits);
+
+    return 0;
+}
 
 //--------------------------------------------------------------------------

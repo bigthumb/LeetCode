@@ -11,12 +11,12 @@
 //-------------------------------------------------------------------------
 
 // Definition for singly-linked list.
-//struct ListNode 
-//{
-//    int val;
-//    ListNode *next;
-//    ListNode(int x) : val(x), next(NULL) {}
-//};
+struct ListNode 
+{
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
 
 class Solution
 {
@@ -51,21 +51,21 @@ public:
     }
 };
 
-//int main(int argc, const char* argv[])
-//{
-//    ListNode* head = NULL;
-//    Solution s;
-//    s.addNode(head, 0);
-//    s.addNode(head, 1);
-//    s.addNode(head, 4);
-//    s.addNode(head, 2);
-//    s.addNode(head, 5);
-//    s.addNode(head, 3);
-//    s.addNode(head, 6);
-//
-//    ListNode* newHead = s.swapPairs(head);
-//
-//    return 0;
-//}
+int main(int argc, const char* argv[])
+{
+    ListNode* head = NULL;
+    Solution s;
+    s.addNode(head, 0);
+    s.addNode(head, 1);
+    s.addNode(head, 4);
+    s.addNode(head, 2);
+    s.addNode(head, 5);
+    s.addNode(head, 3);
+    s.addNode(head, 6);
+
+    ListNode* newHead = s.swapPairs(head);
+
+    return 0;
+}
 
 //--------------------------------------------------------------------------
