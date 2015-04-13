@@ -2,7 +2,7 @@
 //  File Name   :   reversebits.cpp
 //  Author      :   bigthumb
 //  Create Time :   2015-4-12 23:07:08
-//  Description :  
+//  Description :   https://leetcode.com/problems/reverse-bits/
 //
 // -----------------------------------------------------------------------*/
 

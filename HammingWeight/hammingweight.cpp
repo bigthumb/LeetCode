@@ -2,7 +2,7 @@
 //  File Name   :   hammingweight.cpp
 //  Author      :   bigthumb
 //  Create Time :   2015-4-12 17:38:43
-//  Description :  
+//  Description :   https://leetcode.com/problems/number-of-1-bits/
 //
 // -----------------------------------------------------------------------*/
 
