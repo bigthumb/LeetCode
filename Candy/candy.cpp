@@ -7,15 +7,12 @@
 // -----------------------------------------------------------------------*/
 
 #include <vector>
-#include <limits>
-#include <cassert>
 
 //-------------------------------------------------------------------------
 
-// 重复下面两个步骤
-// (1) 找出波谷t，波谷分配[t]=1，接着从波谷t向前一个波峰c逐个加1分配，若[c]<=[c-1]，则
-//     更新波峰[c]=[c-1]+1；
-// (2) 从波谷t后继开始逐个加1分配，直到下一个波峰；
+// 抽象来看，序列有这样的特性，上升段、水平段和下降段作为一个最小单元，而且一个最小单元中，
+// 这三段至少出现1段，至多3段都出现，例如序列1，2，2，1，上升段、水平段和下降段都出现，又例如
+// 序列3，2，1，只出现下降段。故思路是先求出一个最小单元的计数，然后求出所有最小单元的计数总和。
 // 
 
 class Solution
@@ -24,75 +21,42 @@ public:
     int candy(std::vector<int>& ratings)
     {
         int count = 0;
-
-        int c = -1;
-        int t = 0;
-        int cn = std::numeric_limits<int>().max();  // 假设初始的波峰分配个数
-        while(c + 1 < ratings.size())
+        int sz = ratings.size();
+        for(int i = 0; i + 1 < sz; )
         {
-            // 寻找波谷
-            t = c + 1;
-            while(t + 1 < ratings.size() && ratings[t] >= ratings[t + 1])
-                ++t;
+            // 上升段
+            int asc = 1;
+            for(; i + 1 < sz && ratings[i] < ratings[i + 1]; ++i) count += asc++;
 
-            // 从波谷t向前一个波峰c逐个分配
-            int tn = 1;
-            int i = t;
-            for(; i > c + 1; --i)
+            // 水平段
+            int hor = 1;
+            for(; i + 1 < sz && ratings[i] == ratings[i + 1]; ++i) hor++;
+
+            // 下降段
+            int des = 1;
+            for(; i + 1 < sz && ratings[i] > ratings[i + 1]; ++i) count += des++;
+
+            // 根据是否出现水平段做处理
+            if(hor == 1)
+                count += max(asc, des);
+            else
             {
-                if(ratings[i] < ratings[i - 1])
-                {
-                    count += tn;
-                    ++tn;
-                }
-                else if(ratings[i] == ratings[i - 1])
-                {
-                    count += tn;
-                    tn = 1;
-                }
-                else
-                {
-                    assert(false);
-                }
+                count += asc;
+                count += hor - 2;     // 水平段个数超过2才真正计数
+                count += des;
             }
 
-            if(i >= 0)
-                count += tn;
-
-            if(cn <= tn)
-            {
-                count -= cn;
-                cn = tn + 1;
-                count += cn;
-            }
-
-            // 从波谷开始上升到波峰
-            cn = 2;
-            c = t + 1;
-            for(; c + 1 < ratings.size() && ratings[c] <= ratings[c + 1]; ++c)
-            {
-                if(ratings[c] < ratings[c + 1])
-                {
-                    count += cn;
-                    ++cn;
-                }
-                else if(ratings[c] == ratings[c + 1])
-                {
-                    count += cn;
-                    cn = 1;
-                }
-                else
-                {
-                    assert(false);
-                }
-            }
-
-            if(c < ratings.size())
-                count += cn;
+            // 出现下降段则计数减1
+            if(des > 0) count -= 1;
         }
+
+        // 补上最后的计数
+        if(sz > 0) count += 1;
 
         return count;
     }
+private:
+    inline int max(int l, int r) const { return (l > r ? l : r); }
 };
 
 int main(int argc, const char* argv[])
