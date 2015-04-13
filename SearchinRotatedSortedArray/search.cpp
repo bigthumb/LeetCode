@@ -105,33 +105,33 @@ private:
     }
 };
 
-//int main(int argc, const char* argv[])
-//{
-//    {
-//        int A[] = { 0 };
-//        int n = 0;
-//        int i = Solution().search(A, n, 2);
-//    }
-//
-//    {
-//        int A[] = { 4, 5};
-//        int n = sizeof(A) / sizeof(int);
-//        int i = Solution().search(A, n, 9);
-//    }
-//
-//    {
-//        int A[] = { 4, 5, 6, 7, 0, 1, 2, 3 };
-//        int n = sizeof(A) / sizeof(int);
-//        int i = Solution().search(A, n, 6);
-//    }
-//
-//    {
-//        int A[] = { 2, 1, 0, 5, 4, 3 };
-//        int n = sizeof(A) / sizeof(int);
-//        int i = Solution().search(A, n, 5);
-//    }
-//
-//    return 0;
-//}
+int main(int argc, const char* argv[])
+{
+    {
+        int A[] = { 0 };
+        int n = 0;
+        int i = Solution().search(A, n, 2);
+    }
+
+    {
+        int A[] = { 4, 5};
+        int n = sizeof(A) / sizeof(int);
+        int i = Solution().search(A, n, 9);
+    }
+
+    {
+        int A[] = { 4, 5, 6, 7, 0, 1, 2, 3 };
+        int n = sizeof(A) / sizeof(int);
+        int i = Solution().search(A, n, 6);
+    }
+
+    {
+        int A[] = { 2, 1, 0, 5, 4, 3 };
+        int n = sizeof(A) / sizeof(int);
+        int i = Solution().search(A, n, 5);
+    }
+
+    return 0;
+}
 
 //--------------------------------------------------------------------------
