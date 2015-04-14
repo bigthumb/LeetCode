@@ -2,7 +2,7 @@
 //  File Name   :   twosum.cpp
 //  Author      :   bigthumb
 //  Create Time :   2015-4-14 8:51:45
-//  Description :  
+//  Description :   https://leetcode.com/problems/two-sum/
 //
 // -----------------------------------------------------------------------*/
 
